@@ -1,0 +1,39 @@
+<h1> New Record</h1>
+<form action="/product" method="post">
+<table>
+	<tr> <td> Product Name: </td> <td> <input type="text" name="productname" required> </td> </tr>
+	<tr> <td> Image: </td> <td> <input type="text" name="prodimage" required>  </td> </tr>
+	<tr> <td> Description: </td> <td> <textarea name="description" rows="10" cols="30" placeholder="Description"></textarea> </td> </tr>
+	<tr> <td> Ingredients: </td> <td> <textarea name="ingredients" rows="10" cols="30" placeholder="ingredients"></textarea> </td> </tr>
+	<tr> <td> Weight Detail: </td> <td> <textarea name="weightdetail" rows="10" cols="30" placeholder="Weight Detail"></textarea> </td> </tr>
+	<tr> <td> Health Warning: </td> <td> <textarea name="healthwarn" rows="10" cols="30" placeholder="healthwarn"></textarea> </td> </tr>
+	<tr> <td> Color: </td> <td> <input type="text" name="prodcolor" required> </td> </tr>
+	<tr> <td> Package: </td> <td> <input type="number" name="package_id" required> </td> </tr>
+	<tr> <td> Category: </td> <td> 
+		
+								<select name="category_id" required>
+										<optgroup label="Select Category">
+											<% for (var i = 0; i < category.length; i++) { %>
+	<option value=<%= category[i].category_id %>> <%= category[i].categoryname %> </option>
+											<% } %>
+										</optgroup>
+									</select>
+								
+
+	
+								</td> </tr>
+
+
+	<tr> <td> Price: </td> <td> <input type="text" name="saleprice" required> </td> </tr>
+	<tr> <td> Status: </td> <td> <select  name="status"  required>
+									<option selected disabled>Choose Status</option>
+									<option>Available</option>
+									<option>Discontinued</option>
+									<option>Coming Soon</option>
+                    			</select> </td> </tr>
+
+	<tr> <td> Homepage?</td> <td><input type="checkbox" name="homepage"> </td></tr>
+</table>
+<button type="submit">Save</button>
+</form>
+
